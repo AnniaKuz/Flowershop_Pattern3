@@ -1,0 +1,16 @@
+CREATE DATABASE flowershop;
+
+CREATE TABLE `flowershop`.`product` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `productType` ENUM('FLOWER', 'TREE', 'DECO') NOT NULL,
+  `price` DOUBLE UNSIGNED NOT NULL,
+  `info` VARCHAR(45) NOT NULL,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `flowershop`.`invoice` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `totalProducts` INT UNSIGNED NOT NULL,
+  `totalPrice` DOUBLE UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);
